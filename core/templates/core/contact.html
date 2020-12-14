@@ -1,0 +1,30 @@
+{% extends "core/base.html" %}
+
+
+
+{% block content %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'core/css/contact_styles.css' %}">
+
+    <div class="left-column">
+    <h1 class="post-detail-title">Introduction</h1>
+    <div class="post-detail-content">
+<p>Hello and welcome!</p>
+
+<p>I´m María, the brains behind Little Dream Gardens.
+I´m passionate about all crafts, especially all miniature related, and I started miniature gardening a little bit than a year ago. Is been an amazing journey!
+I wanted to share all that I´ve been learning during this past year, in combination with my new projects and diy´s.</p>
+<p>Is funny because when I was little, my mum use to check my pockets when I came back home from the playground. There, she will find innumerable treasures such as twigs, pebbles, leafs or candy wraps… now, a few years later, I still come back home with my pockets full of new things for my miniature gardens.</p>
+<p>Please bare in mind that all my tutorials are for adults, unless otherwise stated. The props I make are not toys and are not safe for children, so is better to keep them away from them.</p>
+
+<p>Feel free to contact me with any questions and to send me your creations!
+I hope you enjoy my website!</p>
+    </div>
+    </div>
+
+  <div class="right-column">
+    <div class="picture">
+    <img src="{% static  'core/images/contact_picture.jpg' %}" alt="Maria">
+    </div>
+  </div>
+{% endblock %}

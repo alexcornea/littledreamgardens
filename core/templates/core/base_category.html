@@ -1,0 +1,18 @@
+{% extends "core/base.html" %}
+{% block content %}
+{% load static %}
+
+
+  <div class="category-title">
+
+      <h1>{{ category.name }}</h1>
+  </div>
+<div class="category-content">
+  <figure class="gallery-picture">
+    <h1 class="picture-text">{{ post.title }}</h1>
+    <img src="{{ post.image.url }}" alt="gallery image">
+  </figure>
+
+</div>
+  {% endfor %}
+{% endblock %}

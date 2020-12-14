@@ -1,0 +1,24 @@
+{% extends "core/base.html" %}
+
+{% block content %}
+{% load static %}
+    <link rel="stylesheet" href="{% static 'core/css/post_detail_styles.css' %}">
+
+
+    <div class="left-column">
+    <h1 class="post-detail-title">{{ object.title }}</h1>
+    <div class="post-detail-content">
+      {{ object.content | safe }}
+    </div>
+    </div>
+
+  <div class="right-column">
+    <div class="presentation_box">
+    <img id="presentation_pic" src="{% static 'core/images/medalion_maria.png' %}" alt="Maria"/>
+    <h1>Maria</h1>
+    <p>My name is Maria and I'm here to show you how to do proper miniature gardens. My name is Maria and I'm here
+         to show you how to do proper miniature gardens.</p>
+    <a href="{% url 'contact' %}">READ MORE</a>
+    </div>
+  </div>
+{% endblock %}

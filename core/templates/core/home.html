@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+{% load static %}
+
+<html lang="en" dir="ltr">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- CSS -->
+    <link rel="stylesheet" href="{% static 'core/css/styles.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+         integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+
+<link href="https://fonts.googleapis.com/css2?family=Alice&family=Nothing+You+Could+Do&family=Raleway&display=swap" rel="stylesheet">
+
+      <!-- Optional JavaScript -->
+      <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+
+      <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+         integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+      <script rel="stylesheet" src="{% static 'core/js/home.js' %}"></script>
+
+    <title>Little Dream Gardens</title>
+  </head>
+
+
+
+  <body>
+
+    <div class="page-container">
+      <div class="container_lgd">
+      <!-- Top Image -->
+      <img class="image" src="{% static 'core/images/logo_ldg.png' %}" alt="My Image"/>
+
+      <!-- Navbar -->
+      <header class="header-lgd sticky-top">
+        <div class="sticky-top">
+          <div class="topnav-LGD" id="myTopnav">
+          <a id="dr0" href="{% url 'home' %}">Home</a>
+            <div class="dropdown-LGD drop1">
+            <button class="dr1 dropbtn">Getting Started
+            <i class="fa fa-caret-down"></i>
+            </button>
+              <div class="dr-c1 dropdown-content-LGD1 dropdown1" >
+              <a href="#">Tools</a>
+              <a href="#">How to</a>
+              <a href="#">Supplies</a>
+              </div>
+            </div>
+
+            <div class="dropdown-LGD drop2">
+            <button class="dr2 dropbtn">DIY
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class=" dr-c2 dropdown-content-LGD2 dropdown2">
+      <a href="#">Furniture</a>
+      <a href="#">Accessories</a>
+      <a href="#">Decor</a>
+    </div>
+  </div>
+
+    <div class="dropdown-LGD drop3">
+    <button class="dr3 dropbtn">Gardens
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class=" dr-c3 dropdown-content-LGD3 dropdown3">
+      <a href="#">Miniature</a>
+      <a href="#">Micro</a>
+    </div>
+  </div>
+
+    <div class="dropdown-LGD drop4">
+    <button class="dr4 dropbtn">Terrariums
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class=" dr-c4 dropdown-content-LGD4 dropdown4">
+      <a href="#">Open</a>
+      <a href="#">Enclosed</a>
+    </div>
+  </div>
+
+  <a id="dr5" href="{% url 'base_gallery' %}">Gallery</a>
+  <a id="dr6" href="{% url 'contact' %}">Contact</a>
+
+  <div class="wrap">
+   <div class="search">
+      <input type="text" class="searchTerm" placeholder="Search...">
+      <button type="submit" class="searchButton">
+        <i class="fa fa-search"></i>
+     </button>
+   </div>
+</div>
+  <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="myFunction()">&#9776;</a>
+</div>
+</div>
+</header>
+
+<div class="wrap-mobile">
+ <div class="search-mobile">
+    <input type="text" class="searchTerm-mobile" placeholder="Search...">
+    <button type="submit" class="searchButton-mobile">
+      <i class="fa-m fa fa-search"></i>
+   </button>
+ </div>
+</div>
+      <!-- Content -->
+      <div class="content-wrap">
+      <div class="left-side">
+
+      {% for post in posts %}
+
+      <div class="left-column">
+        <div class="post_picture">
+          <img src="{{ post.image.url }}" alt="post_image"/>
+        </div>
+
+    <div class="post_box">
+      <div class='post_box-inside'>
+
+    <h2 class="post_title">{{ post.title }}</h2>
+    <a class="
+            {% if post.category == 'Getting Started' %}gs{% endif %}
+            {% if post.category == 'DIY' %}diy{% endif %}
+            {% if post.category == 'Gardens' %}gar{% endif %}
+            {% if post.category == 'Terrariums' %}ter{% endif %}
+    " href="#"> {{ post.category }} </a>
+
+    <p class="post_text">{{ post.summary|truncatewords:25 }}</p>
+
+    <a class="post_read_more" href="{{ post.get_absolute_url }}"> READ MORE &#187;</a>
+     </div>
+     <span id="post_bottom_line"></span>
+    </div>
+     </div>
+
+      {% endfor %}
+
+      <div class="post-buttons">
+
+        {% if posts.has_previous %}
+
+       <a class="newer-button" href="?page={{ posts.previous_page_number }}">&#171; Newer</a>
+
+        {% endif %}
+
+        {% if posts.has_next %}
+
+        <a class="older-button" href="?page={{ posts.next_page_number }}">Older &#187;</a>
+
+        {% endif %}
+
+      </div>
+</div>
+
+      <div class="right-column">
+        <div class="presentation_box">
+      <img id="presentation_pic" src="{% static 'core/images/medalion_maria.png' %}" alt="Maria"/>
+      <h1>Maria</h1>
+      <p>My name is Maria and I'm here to show you how to do proper miniature gardens. My name is Maria and I'm here to show you how to do proper miniature gardens.</p>
+      <a href="{% url 'contact' %}">READ MORE</a>
+     </div>
+</div>
+  </div>
+<button  onclick="topFunction()" id='back_to_top' title="Go to top">&#10148;</button>
+</div>
+
+
+<footer class="footer-lgd">
+<div class="top-footer">
+  <h1>Little Green Dreams</h1>
+  <div class="instagram">
+    <h2>Follow us on Instagram</h2>
+    <a href="https//www.instagram.com"><img src="{% static 'core/images/instagram.png' %}" alt=""></a>
+  </div>
+</div>
+<div class="bottom-footer">
+<address class="top-pic-address">
+  <a href="https://www.freepik.com/free-photos-vectors/background">Top Background vector
+    created by rawpixel.com - www.freepik.com</a>
+</address>
+<p>Copyright © Little Dream Gardens. All rights reserved</p>
+</div>
+</footer>
+
+</div>
+
+  </body>
+
+
+
+</html>
