@@ -1,5 +1,5 @@
 from django.contrib import admin
-from core.models import Post, Picture, Category
+from core.models import  Post, Picture, Category
 
 
 class PostAdmin(admin.ModelAdmin):

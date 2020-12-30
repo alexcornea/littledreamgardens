@@ -8,11 +8,25 @@ from ckeditor_uploader.fields import RichTextUploadingField
 
 
 class Category(models.Model):
+    GETTING_STARTED = 'GS'
+    DIY = 'DIY'
+    GARDENS = 'GR'
+    TERRARIUMS = 'TR'
+    CATEGORY_TYPE = [
+        (GETTING_STARTED, 'Getting Started'),
+        (DIY, 'DIY'),
+        (GARDENS, 'Gardens' ),
+        (TERRARIUMS, 'Terrariums'),
+    ]
     name = models.CharField(max_length=100)
+    kind = models.CharField(max_length=3, choices=CATEGORY_TYPE,  default= ' ')
     
     def __str__(self):
         return self.name
-
+        
+    class Meta:
+        verbose_name = 'Category'
+        verbose_name_plural = 'Categories'
 
 
 class Post(models.Model):

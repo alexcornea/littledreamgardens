@@ -42,48 +42,49 @@
 <div class="topnav-LGD" id="myTopnav">
 
     <a id="dr0" href="{% url 'home' %}">Home</a>
-
     <div class="dropdown-LGD drop1">
-    <button class="dr1 dropbtn">Getting Started
+      <button class="dr1 dropbtn">Getting Started
       <i class="fa fa-caret-down"></i>
-    </button>
-    <div class="dr-c1 dropdown-content-LGD1 dropdown1" >
-      {% for category in category_list %}
-      <a href="/category/{{ category.name }}">{{ category.name|title }}</a>
-      {% endfor %}
-    </div>
-  </div>
+      </button>
+        <div class="dr-c1 dropdown-content-LGD1 dropdown1" >
+          {% for category in category_list_GS %}
+          <a href="/category/{{ category.name }}">{{ category.name|title }}</a>
+          {% endfor %}
+        </div>
+      </div>
 
-    <div class="dropdown-LGD drop2">
-    <button class="dr2 dropbtn">DIY
-      <i class="fa fa-caret-down"></i>
-    </button>
-    <div class=" dr-c2 dropdown-content-LGD2 dropdown2">
-      <a href="#">Furniture</a>
-      <a href="#">Accessories</a>
-      <a href="#">Decor</a>
-    </div>
-  </div>
+      <div class="dropdown-LGD drop2">
+      <button class="dr2 dropbtn">DIY
+<i class="fa fa-caret-down"></i>
+</button>
+<div class=" dr-c2 dropdown-content-LGD2 dropdown2">
+{% for category in category_list_DIY %}
+<a href="/category/{{ category.name }}">{{ category.name|title }}</a>
+{% endfor %}
+</div>
+</div>
 
-    <div class="dropdown-LGD drop3">
-    <button class="dr3 dropbtn">Gardens
-      <i class="fa fa-caret-down"></i>
-    </button>
-    <div class=" dr-c3 dropdown-content-LGD3 dropdown3">
-      <a href="#">Miniature</a>
-      <a href="#">Micro</a>
-    </div>
-  </div>
+<div class="dropdown-LGD drop3">
+<button class="dr3 dropbtn">Gardens
+<i class="fa fa-caret-down"></i>
+</button>
+<div class=" dr-c3 dropdown-content-LGD3 dropdown3">
+{% for category in category_list_GR %}
+<a href="/category/{{ category.name }}">{{ category.name|title }}</a>
+{% endfor %}
+</div>
+</div>
 
-    <div class="dropdown-LGD drop4">
-    <button class="dr4 dropbtn">Terrariums
-      <i class="fa fa-caret-down"></i>
-    </button>
-    <div class=" dr-c4 dropdown-content-LGD4 dropdown4">
-      <a href="#">Open</a>
-      <a href="#">Enclosed</a>
-    </div>
-  </div>
+<div class="dropdown-LGD drop4">
+<button class="dr4 dropbtn">Terrariums
+<i class="fa fa-caret-down"></i>
+</button>
+<div class=" dr-c4 dropdown-content-LGD4 dropdown4">
+{% for category in category_list_TR %}
+<a href="/category/{{ category.name }}">{{ category.name|title }}</a>
+{% endfor %}
+</div>
+</div>
 
   <a id="dr5" href="{% url 'base_gallery' %}">Gallery</a>
   <a id="dr6" href="{% url 'contact' %}">Contact</a>

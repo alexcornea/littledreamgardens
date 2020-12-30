@@ -58,14 +58,21 @@ class CatListView(ListView):
     def get_queryset(self):
         content = {
             'cat': self.kwargs['category'],
-            'posts': Post.objects.filter(category__name=self.kwargs['category'])
+            'posts': Post.objects.filter(category__name=self.kwargs['category']),
         }
         return content
 
 
 def category_list(request):
-    category_list = Category.objects.exclude(name='default')
+    category_list_GS = Category.objects.exclude(name='default').filter(kind='GS')
+    category_list_DIY = Category.objects.exclude(name='default').filter(kind='DIY')
+    category_list_GR = Category.objects.exclude(name='default').filter(kind='GR')
+    category_list_TR = Category.objects.exclude(name='default').filter(kind='TR')
     context = {
-        "category_list": category_list,
+        "category_list_GS": category_list_GS,
+        "category_list_DIY": category_list_DIY,
+        "category_list_GR": category_list_GR,
+        "category_list_TR": category_list_TR,
+        
     }
     return context
