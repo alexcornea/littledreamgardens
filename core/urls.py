@@ -9,4 +9,5 @@ urlpatterns = [
     path('', views.base_gallery, name='/base_gallery'),
     path('', views.contact, name='/contact'),
     path('', views.base, name='base'),
+    path('category/<category>/', views.CatListView.as_view(), name='category')
 ]

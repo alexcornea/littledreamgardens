@@ -1,12 +1,14 @@
+from typing import List
 from django.shortcuts import render
-from .models import Post, Picture
+from .models import Post, Picture, Category
 from django.core.paginator import Paginator
 from django.views import generic
+from django.views.generic import ListView
 
 
 def base(request):
     return render(request, 'core/base.html')
-    
+
 
 def home(request):
     posts = Post.objects.all()
@@ -30,7 +32,7 @@ def post_detail(request, slug=None):
 class PostDetail(generic.DetailView):
     model = Post
     template_name = 'post_detail.html'
-    
+
 
 def base_gallery(request):
     pictures = Picture.objects.all()
@@ -47,3 +49,23 @@ class PictureList(generic.ListView):
 
 def contact(request):
     return render(request, 'core/contact.html', {'contact': contact})
+
+
+class CatListView(ListView):
+    template_name = 'category.html'
+    context_object_name = 'catlist'
+    
+    def get_queryset(self):
+        content = {
+            'cat': self.kwargs['category'],
+            'posts': Post.objects.filter(category__name=self.kwargs['category'])
+        }
+        return content
+
+
+def category_list(request):
+    category_list = Category.objects.exclude(name='default')
+    context = {
+        "category_list": category_list,
+    }
+    return context

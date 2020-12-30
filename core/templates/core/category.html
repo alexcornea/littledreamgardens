@@ -1,0 +1,18 @@
+{% extends "core/base.html" %}
+{% block content %}
+{% load static %}
+
+
+  <div class="category-title">
+
+      <h1>{{ catlist.cat }}</h1>
+  </div>
+<div class="category-content">
+{% for post in catlist.posts %}
+<a href="{{ post.get_absolute_url }}">
+<h1>ff {{ post.title }} rff</h1>
+
+</a>
+{% endfor %}
+</div>
+{% endblock %}

@@ -1,6 +1,5 @@
 from django.contrib import admin
-
-from core.models import Post, Picture
+from core.models import Post, Picture, Category
 
 
 class PostAdmin(admin.ModelAdmin):
@@ -17,3 +16,5 @@ class PictureAdmin(admin.ModelAdmin):
 
 admin.site.register(Post, PostAdmin)
 admin.site.register(Picture, PictureAdmin)
+admin.site.register(Category)
+

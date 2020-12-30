@@ -47,9 +47,9 @@
             <i class="fa fa-caret-down"></i>
             </button>
               <div class="dr-c1 dropdown-content-LGD1 dropdown1" >
-              <a href="#">Tools</a>
-              <a href="#">How to</a>
-              <a href="#">Supplies</a>
+                {% for category in category_list %}
+                <a href="/category/{{ category.name }}">{{ category.name|title }}</a>
+                {% endfor %}
               </div>
             </div>
 
