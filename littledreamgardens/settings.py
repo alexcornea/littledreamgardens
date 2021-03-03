@@ -36,8 +36,12 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
-    'django.contrib.staticfiles',
     'core.apps.CoreConfig',
+    'django.contrib.staticfiles',
+    'jquery',
+    'ckeditor',
+    'ckeditor_uploader',
+    
 ]
 
 MIDDLEWARE = [
@@ -137,6 +141,8 @@ CKEDITOR_IMAGE_BACKEND = "pillow"
 
 CKEDITOR_CONFIGS = {
     'default': {
-        'toolbar': None,
-        },
-    }
+        'toolbar': 'full',
+        'height': 700,
+        'width': 1800,
+    },
+}

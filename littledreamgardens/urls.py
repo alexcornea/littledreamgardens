@@ -12,6 +12,7 @@ urlpatterns = [
     path('ckeditor/', include('ckeditor_uploader.urls')),
     path('', core.views.home, name='home'),
     path('', core.views.base, name='base'),
+    path('search/', core.views.post_search, name='post_search'),
     path('post_detail', core.views.post_detail, name='post_detail'),
     path('base_gallery', core.views.base_gallery, name='base_gallery'),
     path('contact', core.views.contact, name='contact'),

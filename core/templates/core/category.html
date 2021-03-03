@@ -4,15 +4,35 @@
 
 
   <div class="category-title">
-
-      <h1>{{ catlist.cat }}</h1>
+      <h1>{{ catlist.cat|title }}</h1>
   </div>
 <div class="category-content">
-{% for post in catlist.posts %}
-<a href="{{ post.get_absolute_url }}">
-<h1>ff {{ post.title }} rff</h1>
+<div class='grid-row'>
+  {% for post in catlist.posts %}
 
-</a>
+  <div class='img-wrap'>
+    <a href="{{ post.get_absolute_url }}" class='post-thumbnail'>
+      <img src="{{ post.image.url }}" alt="cover pic">
+    </a>
+    <h2 class='post-title'>
+      <a href="{{ post.get_absolute_url }}" class='post-title-link'>
+        {{ post.title }}</a>
+    </h2>
+  </div>
+
 {% endfor %}
 </div>
+</div>
 {% endblock %}
+
+
+
+
+<div class='grid-item'>
+  <a href="{{ post.get_absolute_url }}">
+    <figure class ='item-image-frame'>
+      <img src="{{ post.image.url }}" alt="post image">
+    </figure>
+  </a>
+  <h1>{{ post.title }}</h1>
+  </div>
