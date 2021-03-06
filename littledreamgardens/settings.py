@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'jquery',
     'ckeditor',
     'ckeditor_uploader',
+    'crispy_forms',
     
 ]
 
@@ -134,6 +135,7 @@ STATIC_ROOT = 'static/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
 
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 CKEDITOR_JQUERY_URL = 'https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js'
 CKEDITOR_UPLOAD_PATH = 'uploads/'

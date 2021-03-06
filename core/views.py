@@ -1,8 +1,8 @@
-from core.forms import PostSearchForm
+from core.forms import CommentForm, PostSearchForm
 from typing import List
 
 from django.core.paginator import Paginator
-from django.shortcuts import render
+from django.shortcuts import get_object_or_404, render
 from django.views import generic
 from django.views.generic import ListView
 
@@ -27,9 +27,28 @@ class PostList(generic.ListView):
     template_name = "home.html"
 
 
-def post_detail(request, slug=None):
-    post = Post.objects.get(slug=slug)
-    return render(request, "core/post_detail.html", {"post": post})
+def post_detail(request, slug):
+    post = get_object_or_404(Post, slug=slug)
+    comments = post.comments.filter(active=True)
+    new_comment = None
+    # Comment posted
+    if request.method == 'POST':
+        comment_form = CommentForm(data=request.POST)
+        if comment_form.is_valid():
+            
+            # Create comment object but don't save database yet
+            new_comment = comment_form.save(commit=False)
+            # Assign the current post to the comment
+            new_comment.post = post
+            # Save the comment to the database
+            new_comment.save()
+    else:
+        comment_form = CommentForm()
+        
+    return render(request, "core/post_detail.html", {"post": post,
+                                                     "comments": comments,
+                                                     "new_comment": new_comment,
+                                                     "comment_form": comment_form})
 
 
 class PostDetail(generic.DetailView):
@@ -78,7 +97,8 @@ def category_list(request):
         "category_list_TR": category_list_TR,
     }
     return context
-
+    
+    
 def post_search(request):
     form = PostSearchForm()
     q = ''
