@@ -1,5 +1,6 @@
 from ckeditor.fields import RichTextField
 from ckeditor_uploader.fields import RichTextUploadingField
+from tinymce.models import HTMLField
 from django.db import models
 from django.db.models.deletion import CASCADE, PROTECT
 from django.db.models.fields import TextField
@@ -49,18 +50,17 @@ class Post(models.Model):
     def get_absolute_url(self):
         return reverse("core:post_detail", args=[str(self.slug)])
 
-    class Meta:
-        ordering = ["-created_date"]
+
 
 
 class Comment(models.Model):
     post = models.ForeignKey(Post, on_delete=models.CASCADE, related_name="comments", null=True)
     name = models.CharField(max_length=80, null=True)
     email = models.EmailField(null=True)
-    body = models.TextField(null=True)
+    body = RichTextUploadingField(config_name="basic", blank=True, null=True)
     created_on = models.DateTimeField(auto_now_add=True, null=True)
     active = models.BooleanField(default=False)
-    
+        
     class Meta:
         ordering = ['created_on']
     

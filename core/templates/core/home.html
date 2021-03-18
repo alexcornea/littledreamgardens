@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 {% load static %}
 
-<html lang="en" dir="ltr">
+<html lang="en" dir="ltr">  
   <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -12,21 +12,21 @@
     <link rel="stylesheet" href="{% static 'core/css/category_styles.css' %}">
     <link rel="stylesheet" href="{% static 'core/css/search_styles.css' %}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
-         integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
-<link href="https://fonts.googleapis.com/css2?family=Alice&family=Nothing+You+Could+Do&family=Raleway&display=swap" rel="stylesheet">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Alice&family=Nothing+You+Could+Do&family=Raleway&display=swap" rel="stylesheet">
 
       <!-- Optional JavaScript -->
       <!-- jQuery first, then Popper.js, then Bootstrap JS -->
 
-      <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous"></script>
+      <script type="text/javascript" src="{% static 'core/js/home.js' %}"></script>
+      <script type="text/javascript" src="{% static 'core/js/gallery.js' %}"></script>
       <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
          integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-      <script rel="stylesheet" src="{% static 'core/js/home.js' %}"></script>
-      <script rel="stylesheet" src="{% static 'core/js/gallery.js' %}"></script>
+         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+         integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+         <script type="text/javascript" src="{% static 'core/js/gallery.js' %}"></script>
       
     <title>Little Dream Gardens</title>
   </head>
@@ -126,16 +126,28 @@
 
     <div class="post_box">
       <div class='post_box-inside'>
-
-    <h2 class="post_title">{{ post.title }}</h2>
+        
+      <a href="{{ post.get_absolute_url }}" class="title-link"><h2 class="post_title">{{ post.title }}</h2></a>
     <a class="
             {% if post.category.kind == 'GS' %}gs{% endif %}
             {% if post.category.kind == 'DIY' %}diy{% endif %}
             {% if post.category.kind == 'GR' %}gar{% endif %}
             {% if post.category.kind == 'TR' %}ter{% endif %}
-    " href="#"> {{ post.category.name }} </a>
+    " href="
+            {% if post.category.name == 'how to' %}/core/category/how%20to/{% endif %}
+            {% if post.category.name == 'tools' %}/core/category/tools/{% endif %}
+            {% if post.category.name == 'supplies' %}/core/category/supplies/{% endif %}
+            {% if post.category.name == 'inspiration' %}/core/category/inspiration/{% endif %}
+            {% if post.category.name == 'furniture' %}/core/category/furniture/{% endif %}
+            {% if post.category.name == 'accesories' %}/core/category/accesories/{% endif %}
+            {% if post.category.name == 'decor' %}/core/category/decor/{% endif %}
+            {% if post.category.name == 'houses' %}/core/category/houses/{% endif %}
+            {% if post.category.name == 'micro' %}/core/category/micro/{% endif %}
+            {% if post.category.name == 'miniature' %}/core/category/miniature/{% endif %}
+            {% if post.category.name == 'open' %}/core/category/open/{% endif %}
+            {% if post.category.name == 'enclosed' %}/core/category/enclosed/{% endif %}
+    "> {{ post.category.name }} </a>
     <p class="post_text">{{ post.summary|truncatewords:24 }}</p>
-
     <a class="post_read_more" href="{{ post.get_absolute_url }}"> READ MORE &#187;</a>
      </div>
      <span id="post_bottom_line"></span>
@@ -164,7 +176,7 @@
       <div class="right-column">
         <div class="presentation_box">
       <img id="presentation_pic" src="{% static 'core/images/medalion_maria.png' %}" alt="Maria"/>
-      <h1>Maria</h1>
+      <h1>About me</h1>
       <p>My name is Maria and I'm here to show you how to do proper miniature gardens. My name is Maria and I'm here to show you how to do proper miniature gardens.</p>
       <a href="{% url 'contact' %}">READ MORE</a>
      </div>
@@ -176,10 +188,10 @@
 
 <footer class="footer-lgd">
 <div class="top-footer">
-  <h1>Little Green Dreams</h1>
+  <h1>Little Dream Gardens</h1>
   <div class="instagram">
     <h2>Follow us on Instagram</h2>
-    <a href="https//www.instagram.com"><img src="{% static 'core/images/instagram.png' %}" alt=""></a>
+    <a href="https://www.instagram.com/littledreamgardens/"><img src="{% static 'core/images/instagram.png' %}" alt=""></a>
   </div>
 </div>
 <div class="bottom-footer">
@@ -187,11 +199,14 @@
   <a href="https://www.freepik.com/free-photos-vectors/background">Top Background vector
     created by rawpixel.com - www.freepik.com</a>
 </address>
-<p>Copyright © Little Dream Gardens. All rights reserved</p>
+<p>Website created by Alex Cornea</p>
+<p>Copyright © Little Dream Gardens. All rights reserved.</p>
+
 </div>
 </footer>
 
 </div>
+
 
   </body>
 

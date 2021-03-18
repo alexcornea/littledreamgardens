@@ -125,6 +125,7 @@ USE_L10N = True
 USE_TZ = True
 
 
+
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
@@ -144,7 +145,28 @@ CKEDITOR_IMAGE_BACKEND = "pillow"
 CKEDITOR_CONFIGS = {
     'default': {
         'toolbar': 'full',
-        'height': 700,
-        'width': 1800,
+        'height': 600,
+        'width': 1400,
+        'extraPlugins': ','.join([ 
+            'uploadimage',
+            'autogrow',
+            
+         ]),
     },
+    'basic': {
+        'toolbar': 'Basic',
+        'skin': 'moono',
+        'height': 100,
+        'width' : 265,
+        'toolbar_Basic': [
+            {'name': 'basicstyles','items': ['Bold', 'Italic']},
+            {'name': 'forms', 'items': [ 'Image' ]},
+            {'name': 'links', 'items': ['Smiley']},
+        ],
+        'extraPlugins': 'autogrow'
+        
+         
+    }
 }
+
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'

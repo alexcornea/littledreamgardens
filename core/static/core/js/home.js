@@ -5,7 +5,7 @@ function myFunction() {
   } else {
     x.className = "topnav-LGD";
   }
-}
+};
 
     $(document).ready(function(){
         // Show hide popover

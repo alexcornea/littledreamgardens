@@ -1,11 +1,11 @@
-from core.forms import CommentForm, PostSearchForm
+from core.forms import CommentForm, PostSearchForm, ContactForm
 from typing import List
-
+from django.core.mail import send_mail, BadHeaderError
 from django.core.paginator import Paginator
-from django.shortcuts import get_object_or_404, render
+from django.shortcuts import get_object_or_404, render, redirect
 from django.views import generic
 from django.views.generic import ListView
-
+from django.http import HttpResponse
 from .models import Category, Picture, Post
 
 
@@ -14,16 +14,16 @@ def base(request):
 
 
 def home(request):
-    posts = Post.objects.all()
+    posts = Post.objects.all().order_by('-created_date')
     paginator = Paginator(posts, 5)
     page = request.GET.get("page")
     posts = paginator.get_page(page)
     return render(request, "core/home.html", {"posts": posts})
 
 
+
 class PostList(generic.ListView):
     model = Post
-    queryset = Post.objects.all().order_by("-created_date")
     template_name = "home.html"
 
 
@@ -76,13 +76,16 @@ def contact(request):
 class CatListView(ListView):
     template_name = "category.html"
     context_object_name = "catlist"
+    posts = Post.objects.all().order_by('-created_date')
 
     def get_queryset(self):
         content = {
             "cat": self.kwargs["category"],
-            "posts": Post.objects.filter(category__name=self.kwargs["category"]),
+            "posts": Post.objects.filter(category__name=self.kwargs["category"]).order_by('created_date'),
         }
         return content
+        
+
 
 
 def category_list(request):
@@ -112,4 +115,27 @@ def post_search(request):
                     {'form': form,
                      'q': q,
                      'results': results, })
-    
+
+
+def contact(request):
+    if request.method == 'POST':
+        form = ContactForm(request.POST)
+        if form.is_valid():
+            subject = "Website Inquiry"
+            body = {
+            'name': form.cleaned_data['name'],
+            'email': form.cleaned_data['email'],
+            'message': form.cleaned_data['message'],
+            }
+            message = "\n".join(body.values())
+            
+            try: 
+                send_mail(subject, message, 'email', ['broncecilla@hotmail.com'])
+            except BadHeaderError:
+                return HttpResponse('Invalid header found.')
+            return redirect ("home")
+
+    form = ContactForm()
+    return render(request, "core/contact.html", {'form':form})
+                
+            
