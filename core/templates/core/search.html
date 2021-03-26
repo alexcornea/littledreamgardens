@@ -1,0 +1,48 @@
+{% extends "core/base.html" %}
+{% block title %}
+Search
+{% endblock %}
+
+{% block content %}
+{% load static %}
+
+<div class="search-title">
+  <h1>Search</h1>
+</div>
+
+{% if q %}
+<div class="search-subtitle">
+<h1>Posts containing "{{ q }}"</h1>
+
+<p>
+    {% with results.count as total_results %}
+    Found {{ total_results }} result{{ total_results|pluralize }}
+    {% endwith %}
+</p>
+</div>
+<div class="search-content">
+    <div class='grid-row'>
+      {% for post in results %}
+    
+      <div class='img-wrap'>
+        <a href="{{ post.get_absolute_url }}" class='post-thumbnail'>
+          <img src="{{ post.image.url }}" alt="cover pic">
+        </a>
+        <h2 class='post-title'>
+          <a href="{{ post.get_absolute_url }}" class='post-title-link'>
+            {{ post.title }}</a>
+        </h2>
+      </div>
+      {% empty %}
+      <p>There are no results for your query.</p>
+      {% endfor %}
+    
+
+    </div>
+    </div>
+
+
+{% endif %}
+
+
+{% endblock %}

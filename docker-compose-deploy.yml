@@ -1,0 +1,32 @@
+version: '3.7'
+
+services:
+  db:
+    image: postgres
+    volumes:
+    - ./postgres-data:/var/lib/postgresql/data
+    environment: 
+    - "POSTGRES_HOST_AUTH_METHOD=trust"596147437707.dkr.ecr.eu-west-2.amazonaws.com/littledreamgardens
+  
+  app:
+    build:
+      context: .
+    volumes:
+      - static_data:/vol/web
+    environment:
+      - SECRET_KEY=samplesecretkey123
+      - ALLOWED_HOSTS=127.0.0.1,localhost
+  
+  proxy:
+    build:
+      context: ./proxy
+    volumes:
+      - static_data:/vol/static
+    ports:
+      - "8080:8080"
+    depends_on:
+      - gardens
+
+volumes:
+  static_data:
+        

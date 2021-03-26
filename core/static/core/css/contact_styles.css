@@ -1,0 +1,269 @@
+.container {
+  display: flex;
+  justify-content:space-between;
+  align-items: flex-start;
+  margin-top: 1em;
+}
+
+.left-col {
+  display: flex;
+  flex-flow: column;
+  width: 46%;
+  font-family: "Raleway", sans-serif;
+  text-align: justify;
+  font-size: 1.3rem;
+  line-height: 1.21em;
+}
+
+.left-col h1 {
+  font-family: "Alice", serif;
+  margin-bottom: 1.8em;
+}
+
+.left-col h2 {
+  font-size: 1.4rem;
+}
+
+.left-col p{
+  font-size: 21px;
+  line-height: 1rem;
+}
+
+.container img{
+  width: 50%;
+  max-width: 600px;
+  border-radius: 5px;
+}
+
+.message_form {
+  position: relative;
+  margin-top: 100px;
+  margin-left: 20px;
+  font-size: .9rem;
+  width: 550px;
+  font-family: "Raleway", sans-serif;
+}
+
+.message_form p{
+  font-family: "Alice", serif;
+  font-size: 1rem;
+}
+
+#id_message {
+  height: 120px;
+}
+
+.submit {
+  font-family: "Nothing You Could Do", cursive;
+  font-size: 2rem;
+  margin-top: 10px;
+  color: #00a5df;
+  font-weight: bold;
+  border: none;
+  background-color: white;
+}
+
+@media only screen and (max-width: 425px) {
+  
+  .container {
+    display: block;
+    justify-content:space-between;
+    align-items: flex-start;
+    margin-top: 1em;
+  }
+   
+  .left-col {
+    width: 100%;
+  }
+  
+  .left-col h1 {
+    font-family: "Alice", serif;
+    text-align: center;
+    font-size: 1.5rem;
+    margin-bottom: .7em;
+  }
+  
+  .left-col h2 {
+    font-size: 1.0rem;
+  }
+  
+  .left-col p{
+    font-size: .7em;
+    line-height: 1rem;
+  }
+
+  .container img{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+    max-width: 600px;
+    border-radius: 5px;
+  }
+  
+  .message_form {
+    width: 280px;
+    margin-top: 60px;
+    margin-bottom: 0px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .message_form p{
+    font-family: "Alice", serif;
+    font-size: 0.8rem;
+  }
+  
+  
+  .submit {
+    font-size: 1.5rem;
+    margin-top: -5px;
+  }
+  
+}
+
+@media only screen and (min-width: 768px) {
+  
+  
+  .container {
+    width: 744px;
+  }
+  
+  .left-col h1 {
+    font-family: "Alice", serif;
+    font-size: 1.3em;
+    margin-bottom: 1.1em;
+  }
+
+  .left-col h2 {
+    font-size: 1.1rem;
+  }
+  
+  .left-col p{
+    font-size: .7em;
+    line-height: 1rem;
+  }
+  
+  .message_form {
+    position: relative;
+    display: block;
+    margin-top: 70px;
+    margin-left: 20px;
+    margin-right: auto;
+    font-size: .9rem;
+    width: 550px;
+    font-family: "Raleway", sans-serif;
+  }
+  
+  .submit {
+    font-size: 1.8rem;
+    margin-top: -5px;
+  }
+  
+}
+
+@media only screen and (min-width: 1024px) {
+  
+  .container {
+    width: 972px;
+  }
+  
+  .left-col {
+    width: 48%;
+  }
+  
+  .left-col h1{
+    margin-bottom: 1.8em;
+  }
+  
+  .left-col h2 {
+    font-size: 1.4rem;
+  }
+  
+  .left-col p{
+    font-size: 1.2rem;
+    line-height: 1.4rem;
+  }
+  
+  .container img{
+    width: 49%;
+    max-width: 530px;
+  }
+  
+}
+
+@media only screen and (min-width: 1440px) {
+
+  .container {
+    width: 1080px;
+  }
+  
+  .left-col {
+    width: 47%;
+  }
+  
+  .left-col h1 {
+    font-family: "Alice", serif;
+    margin-bottom: 2em;
+  }
+  
+  .left-col h2 {
+    font-size: 1.4rem;
+  }
+  
+  .left-col p{
+    font-size: 1.3rem;
+    line-height: 1.45rem;
+  }
+  
+  .container img{
+    width: 47%;
+    max-width: 500px;
+  }
+  
+}
+
+@media only screen and (min-width: 1920px) {
+
+  .container {
+    width: 1152px;
+  }
+  
+  .left-col {
+    font-size: 1.22rem;
+    line-height: 1.34em;
+    width: 50%;
+  }
+  
+  .left-col h1 {
+    font-family: "Alice", serif;
+    font-size: 2.75rem;
+    margin-bottom: 1.8em;
+  }
+  
+  .left-col h2 {
+    font-size: 1.5rem;
+  }
+  
+  .left-col p{
+    font-size: 1.3rem;
+    line-height: 1.7rem;
+  }
+  
+  .container img{
+    width: 49%;
+    max-width: 510px;
+  }
+  
+  .message_form {
+    position: relative;
+    display: block;
+    margin-top: 70px;
+    margin-left: 20px;
+    margin-right: 0;
+    font-size: .9rem;
+    width: 550px;
+  }
+  
+}

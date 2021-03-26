@@ -1,0 +1,822 @@
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 972px;
+}
+
+.left-col {
+  display: block;
+  width: 70%;
+  margin-right: 3em;
+}
+
+.post-detail-title {
+  font-family: "Alice", serif;
+  text-align: center;
+  margin-bottom: 1.5em;
+}
+
+.post-detail-content {
+  font-family: "Raleway", sans-serif;
+}
+
+.post-detail-content p{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: justify;
+}
+  
+.post-detail-content img{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  max-width: 600px;
+  border-radius: 5px;
+}
+
+  /* Comment section */
+
+  .posted-comments {
+    border-top: 1.7px solid lightgrey;
+    display: block;
+    position: relative;
+    width: 760px;
+    margin-top: 60px;
+  }
+
+  .comment {
+    margin-bottom: 60px;
+    color: black;
+    border-bottom: 1.1px solid lightgray;
+  }
+
+  .comment-body h2 {
+    font-family: "Alice", serif;
+    font-size: 1.6rem;
+    color: #00a5df;
+    margin-bottom: 30px;
+  }
+
+  .comment-name {
+    display: block;
+    font-family: "Raleway", sans-serif;
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 1px;
+  }
+
+  .comment-name span {
+    display: block;
+    float: right;
+    font-weight: lighter;
+    font-size: 16px;
+    color: gray;
+  }
+
+  .comment-body {
+    font-family: "Alice", serif;
+    text-align: justify;
+    margin-top: -2px;
+    margin-bottom: 4px;
+  }
+
+  .comment-body h3 {
+    font-family: "Nothing You Could Do", cursive;
+    color: #d223a2;
+    font-weight: bold;
+    font-size: 1.4rem;
+  }
+
+  .writen-comments {
+    display: inline-block;
+    position: relative;
+    width: 760px;
+    margin-top: 10px;
+  }
+
+  .form {
+    width: 265px;
+    margin: 0;
+  }
+  
+  #id_name {
+    width: 265px;
+  }
+  
+  #id_email {
+    width: 265px;
+  }
+  
+  .comment-submit {
+    font-family: "Nothing You Could Do", cursive;
+    font-size: 2rem;
+    margin-top: 12px;
+    color: #00a5df;
+    font-weight: bold;
+    border: none;
+    background-color: white;
+  }
+
+  .right-column {
+    position: relative;
+    float: right;
+    width: 27%;
+    margin-top: 0px;
+    margin-left: 7px;
+    margin-right: 0px;
+  }
+
+  @media only screen and (min-width: 320px) {
+    .container {
+      display: flex;
+      justify-content: space-between;
+      flex-direction: column;
+      align-items: flex-start;
+      width: 296px;
+    }
+    
+    .left-col {
+      display: block;
+      max-width: 100%;
+      width: 100%;
+      margin-right: none;
+      margin-right: 0;
+    }
+    
+    .post-detail-title {
+      font-family: "Alice", serif;
+      font-size: 1.55rem;
+      text-align: center;
+      margin-bottom: 1em;
+    }
+    
+    .post-detail-content {
+      font-family: "Raleway", sans-serif;
+      font-size: 0.9rem;
+    }
+    
+    .post-detail-content p{
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      text-align: justify;
+    }
+      
+    .post-detail-content img{
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      text-align: center;
+      max-width: 250px;
+      height: auto;
+    }
+
+    .posted-comments {
+      border-top: 1.7px solid lightgrey;
+      display: block;
+      position: relative;
+      width: 265px;
+      margin-top: 60px;
+    }
+  
+    .comment {
+      margin-bottom: 60px;
+      color: black;
+      width: 265px;
+      border-bottom: 1.1px solid lightgray;
+    }
+    
+    .comment-body p{
+      font-size: 11px;
+      line-height: 13px;
+    }
+    
+    .comment-body {
+      width: 250px;
+    }
+    
+    .comment-body h2 {
+      font-family: "Alice", serif;
+      font-size: 1.6rem;
+      color: #00a5df;
+      margin-bottom: 30px;
+      width: 250px;
+    }
+  
+    .comment-name {
+      display: block;
+      font-family: "Raleway", sans-serif;
+      font-size: 15px;
+      font-weight: bold;
+      margin-bottom: 2px;
+    }
+  
+    .comment-name span {
+      display: block;
+      float: right;
+      font-weight: lighter;
+      font-size: 15px;
+      margin-bottom: 2px;
+      color: gray;
+    }
+  
+    .comment-body {
+      font-family: "Alice", serif;
+      text-align: justify;
+      font-size: 13px;
+      margin-top: 1px;
+      margin-bottom: 3px;
+      margin-left: none;
+      margin-right: none;
+      width: 250px;
+      padding: 0;
+    }
+  
+    .comment-body h3 {
+      font-family: "Nothing You Could Do", cursive;
+      color: #d223a2;
+      font-weight: bold;
+      width: 296px;
+      font-size: 1.4rem;
+    }
+  
+    .writen-comments {
+      display: inline-block;
+      position: relative;
+      width: 250px;
+      margin-top: 10px;
+    }
+  
+    .form {
+      width: 250px;
+      font-size: 0.9rem;
+    }
+    
+    .comment-submit {
+      font-family: "Nothing You Could Do", cursive;
+      font-size: 2em;
+      margin-top: -9px;
+      margin-bottom: 32px;
+      color: #00a5df;
+      font-weight: bold;
+      border: none;
+      background-color: white;
+    }
+
+  }
+
+  @media only screen and (min-width: 375px) {
+    .container {
+      display: flex;
+      justify-content: space-between;
+      flex-direction: column;
+      align-items: flex-start;
+      width: 351px;
+    }
+    
+    .left-col {
+      display: block;
+      max-width: 100%;
+      width: 371px;
+      margin-right: none;
+      margin-right: 0;
+    }
+    
+    .post-detail-title {
+      font-family: "Alice", serif;
+      font-size: 1.55rem;
+      text-align: center;
+      margin-bottom: 1em;
+    }
+    
+    .post-detail-content {
+      font-family: "Raleway", sans-serif;
+      font-size: 0.9rem;
+    }
+    
+    .post-detail-content p{
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      text-align: justify;
+    }
+      
+    .post-detail-content img{
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      text-align: center;
+      max-width: 300px;
+      height: auto;
+      
+    }
+
+    .posted-comments {
+      border-top: 1.7px solid lightgrey;
+      display: block;
+      position: relative;
+      width: 321px;
+      margin-top: 60px;
+    }
+  
+    .comment {
+      margin-bottom: 60px;
+      color: black;
+      border-bottom: 1.1px solid lightgray;
+      width: 321px;
+    }
+    
+    .comment-body p{
+      font-size: 12px;
+    }
+  
+    .comment-body h2 {
+      font-family: "Alice", serif;
+      font-size: 1.6rem;
+      color: #00a5df;
+      margin-bottom: 30px;
+    }
+  
+    .comment-name {
+      display: block;
+      font-family: "Raleway", sans-serif;
+      font-size: 15px;
+      font-weight: bold;
+      margin-bottom: 2px;
+    }
+  
+    .comment-name span {
+      display: block;
+      float: right;
+      font-weight: lighter;
+      font-size: 15px;
+      margin-bottom: 2px;
+      color: gray;
+    }
+  
+    .comment-body {
+      font-family: "Alice", serif;
+      text-align: justify;
+      font-size: 13px;
+      margin-top: 1px;
+      margin-bottom: 3px;
+      margin-left: none;
+      margin-right: none;
+      max-width: 371px;
+      padding: 0;
+    }
+  
+    .comment-body h3 {
+      font-family: "Nothing You Could Do", cursive;
+      color: #d223a2;
+      font-weight: bold;
+      font-size: 1.4rem;
+    }
+  
+    .writen-comments {
+      display: inline-block;
+      position: relative;
+      width: 321px;
+      margin-top: 10px;
+    }
+  
+    .form {
+      width: 321px;
+      font-size: 0.9rem;
+    }
+    
+    .comment-submit {
+      font-family: "Nothing You Could Do", cursive;
+      font-size: 2em;
+      margin-top: -9px;
+      margin-bottom: 32px;
+      color: #00a5df;
+      font-weight: bold;
+      border: none;
+      background-color: white;
+    }
+  }
+  
+  @media only screen and (min-width: 425px) {
+    .container {
+      display: flex;
+      justify-content: space-between;
+      flex-direction: column;
+      align-items: flex-start;
+      width: 400px;
+    }
+    
+    .left-col {
+      display: block;
+      max-width: 100%;
+      width: 100%;
+      margin-right: none;
+      margin-right: 0;
+    }
+    
+    .post-detail-title {
+      font-family: "Alice", serif;
+      font-size: 1.55rem;
+      text-align: center;
+      margin-bottom: 1em;
+    }
+    
+    .post-detail-content {
+      font-family: "Raleway", sans-serif;
+      font-size: 0.9rem;
+    }
+    
+    .post-detail-content p{
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      text-align: justify;
+    }
+      
+    .post-detail-content img{
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      text-align: center;
+      max-width: 300px;
+      height: auto;
+      
+    }
+
+    .posted-comments {
+      border-top: 1.7px solid lightgrey;
+      display: block;
+      position: relative;
+      width: 370px;
+      margin-top: 60px;
+    }
+  
+    .comment {
+      margin-bottom: 60px;
+      color: black;
+      border-bottom: 1.1px solid lightgray;
+      width: 370px;
+    }
+    
+  
+    .comment-body h2 {
+      font-family: "Alice", serif;
+      font-size: 1.6rem;
+      color: #00a5df;
+      margin-bottom: 30px;
+    }
+  
+    .comment-name {
+      display: block;
+      font-family: "Raleway", sans-serif;
+      font-size: 15px;
+      font-weight: bold;
+      margin-bottom: 2px;
+    }
+  
+    .comment-name span {
+      display: block;
+      float: right;
+      font-weight: lighter;
+      font-size: 15px;
+      margin-bottom: 2px;
+      color: gray;
+    }
+  
+    .comment-body {
+      font-family: "Alice", serif;
+      text-align: justify;
+      font-size: 13px;
+      margin-top: 1px;
+      margin-bottom: 3px;
+      margin-left: none;
+      margin-right: none;
+      max-width: 371px;
+      padding: 0;
+    }
+  
+    .comment-body h3 {
+      font-family: "Nothing You Could Do", cursive;
+      color: #d223a2;
+      font-weight: bold;
+      font-size: 1.4rem;
+    }
+  
+    .writen-comments {
+      display: inline-block;
+      position: relative;
+      width: 371px;
+      margin-top: 10px;
+    }
+  
+    .django-ckeditor-widget{
+      width: 296px;
+    }
+    
+    .form {
+      width: 340px;
+      font-size: 0.9rem;
+    }
+    
+    .comment-submit {
+      font-family: "Nothing You Could Do", cursive;
+      font-size: 2em;
+      margin-top: -9px;
+      margin-bottom: 32px;
+      color: #00a5df;
+      font-weight: bold;
+      border: none;
+      background-color: white;
+    }
+  }
+  
+  @media only screen and (min-width: 768px) {
+    .container {
+      display: flex;
+      justify-content: space-between;
+      flex-direction: column;
+      align-items: flex-start;
+      width: 744px;
+      margin: 0;
+    }
+    
+    .left-col {
+      display: block;
+      max-width: 100%;
+      width: 100%;
+      margin-right: none;
+      margin-right: 0;
+    }
+    
+    .post-detail-title {
+      font-family: "Alice", serif;
+      font-size: 1.8rem;
+      text-align: center;
+      margin-bottom: 1em;
+    }
+    
+    .post-detail-content {
+      font-family: "Raleway", sans-serif;
+      font-size: 0.9rem;
+    }
+    
+    .post-detail-content p{
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      text-align: justify;
+    }
+      
+    .post-detail-content img{
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      text-align: center;
+      width: 600px;
+      height: auto;
+      
+    }
+
+    .posted-comments {
+      border-top: 1.7px solid lightgrey;
+      display: block;
+      position: relative;
+      width: 690px;
+      margin-top: 60px;
+    }
+  
+    .comment {
+      margin-bottom: 60px;
+      color: black;
+      border-bottom: 1.1px solid lightgray;
+      width: 690px;
+    }
+  
+    .comment-body h2 {
+      font-family: "Alice", serif;
+      font-size: 1.6rem;
+      color: #00a5df;
+      margin-bottom: 30px;
+    }
+  
+    .comment-name {
+      display: block;
+      font-family: "Raleway", sans-serif;
+      font-size: 18px;
+      font-weight: bold;
+      margin-bottom: 1px;
+    }
+  
+    .comment-name span {
+      display: block;
+      float: right;
+      font-weight: lighter;
+      font-size: 16px;
+      color: gray;
+    }
+  
+    .comment-body {
+      font-family: "Alice", serif;
+      text-align: justify;
+      margin-top: -2px;
+      margin-bottom: 4px;
+      margin-left: none;
+      margin-right: none;
+      width: 690px;
+      padding: 0;
+    }
+  
+    .comment-body h3 {
+      font-family: "Nothing You Could Do", cursive;
+      color: #d223a2;
+      font-weight: bold;
+      font-size: 1.6rem;
+    }
+  
+    .writen-comments {
+      display: inline-block;
+      position: relative;
+      width: 690px;
+      margin-top: 10px;
+    }
+  
+  }
+  
+  @media only screen and (min-width: 1024px) {
+    .container {
+      display: flex;
+      justify-content: space-between;
+      flex-direction: row;
+      align-items: flex-start;
+      width: 972px;
+      margin: 0;
+      padding: 0px;
+    }
+    
+    .left-col {
+      display: block;
+      width: 63%;
+      margin-right: 2em;
+    }
+    
+    .post-detail-title {
+      font-family: "Alice", serif;
+      font-size: 2rem;
+      text-align: center;
+      margin-bottom: 1em;
+    }
+    
+    .post-detail-content {
+      font-family: "Raleway", sans-serif;
+      font-size: 0.9rem;
+    }
+    
+    .post-detail-content p{
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      text-align: justify;
+    }
+      
+    .post-detail-content img{
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      text-align: center;
+      width: 550px;
+      height: auto;
+    }
+    
+    .posted-comments {
+      width: 100%;
+    }
+    
+    .comment-body {
+      font-family: "Alice", serif;
+      text-align: justify;
+      margin-top: -2px;
+      margin-bottom: 4px;
+      margin-left: none;
+      margin-right: none;
+      width: 604px;
+      padding: 0;
+    }
+    
+    
+    .post-detail-content img{
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      text-align: center;
+      max-width: 50 0px;
+    }
+    
+  }
+
+  @media only screen and (min-width: 1440px) {
+    .container {
+      display: flex;
+      justify-content: space-between;
+      flex-direction: row;
+      align-items: flex-start;
+      width: 1080px;
+    }
+    
+    .left-col {
+      display: block;
+      width: 65%;
+      margin-right: 2.6em;
+    }
+    
+    .post-detail-title {
+      font-family: "Alice", serif;
+      text-align: center;
+      margin-bottom: 1.5em;
+    }
+    
+    .post-detail-content {
+      font-family: "Raleway", sans-serif;
+    }
+    
+    .post-detail-content p{
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      text-align: justify;
+    }
+      
+    .post-detail-content img{
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      text-align: center;
+      width: 600px;
+    }
+    
+    .post-detail-content img{
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      text-align: center;
+      width: 600px;
+    }
+    
+    .comment-body {
+      font-family: "Alice", serif;
+      text-align: justify;
+      margin-top: -2px;
+      margin-bottom: 4px;
+      margin-left: none;
+      margin-right: none;
+      width: 690px;
+      padding: 0;
+    }
+    
+  }
+  
+  @media only screen and (min-width: 1920px) {
+    
+    .container {
+      display: flex;
+      justify-content: space-between;
+      flex-direction: row;
+      align-items: flex-start;
+      width: 1152px;
+    }
+    
+    .left-col {
+      display: block;
+      width: 70%;
+      margin-right: 3em;
+    }
+    
+    .post-detail-title {
+      font-family: "Alice", serif;
+      text-align: center;
+      margin-bottom: 1.5em;
+    }
+    
+    .post-detail-content {
+      font-family: "Raleway", sans-serif;
+    }
+    
+    .post-detail-content p{
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      text-align: justify;
+    }
+    
+    .post-detail-content img{
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      text-align: center;
+      max-width: 600px;
+    }
+    
+}

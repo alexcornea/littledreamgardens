@@ -1,0 +1,47 @@
+{% extends "core/base.html" %} {% block content %} {% load static %} 
+{% load crispy_forms_tags %}
+
+<link rel="stylesheet" href="{% static 'core/css/contact_styles.css' %}" />
+
+<div class="container">
+  <div class="left-col">
+    <h1>Introduction</h1>
+
+    <h2>Hello and welcome!</h2>
+
+    <p>
+      I´m María, the brains behind Little Dream Gardens. <br>I´m passionate about
+      all crafts, especially all miniature related, and I started miniature
+      gardening in 2020 and it has been an amazing journey! <br>I wanted to share
+      all that I´ve been learning during this past year, in combination with my
+      new projects and diy´s.
+    </p>
+    <p>
+      Is funny because when I was little, my mum use to check my pockets when I
+      came back home from the playground. There, she will find innumerable
+      treasures such as twigs, pebbles, leafs or candy wraps… now, a few years
+      later, I still come back home with my pockets full of new things for my
+      miniature gardens.
+    </p>
+    <p>
+      Please bare in mind that all my tutorials are for adults, unless otherwise
+      stated. The props I make are not toys and are not safe for children, so is
+      better to keep them away from them. Feel free to contact me with any
+      questions and to send me your creations! I hope you enjoy my website!
+      <br>Don't forget to follow us on <a rel="stylesheet" href="https://www.instagram.com/littledreamgardens/">Instagram!</a>
+    </p>
+  </div>
+
+  <img src="{% static  'core/images/contact_picture.jpg' %}" alt="Maria" />
+</div>
+
+<div class="message_form">
+  <p>If you would like to get in contact, please send me an emial in the form below.</p>
+  <form method="post">
+    {% csrf_token %} 
+    {{form|crispy}}
+    <button class="submit" type="submit">Submit</button>
+  </form>
+</div>
+
+{% endblock %}

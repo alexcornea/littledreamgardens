@@ -1,0 +1,22 @@
+{% extends "core/base.html" %} {% block content %} {% load static %}
+<div class="container-cat">
+  <div class="category-title">
+  <h1>{{ catlist.cat|title }}</h1>
+  </div>
+
+    <div class="cat-row">
+    {% for post in catlist.posts %}
+    
+    <div class="cat-img-wrap">
+      <a href="{{ post.get_absolute_url }}" class="post-thumbnail">
+      <img src="{{ post.image.url }}" alt="cover pic" /></a>
+      <a href="{{ post.get_absolute_url }}"
+        class="post-title-link">
+        <h1>{{ post.title }}</h1></a>
+      </div>
+    {% empty %}
+    <p>Content coming soon</p>
+  {% endfor %}
+  </div>
+</div>
+{% endblock %}

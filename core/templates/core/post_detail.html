@@ -1,0 +1,64 @@
+{% extends "core/base.html" %} {% block content %} {% load static %} 
+{% load crispy_forms_tags %}
+<link rel="stylesheet" href="{% static 'core/css/post_detail_styles.css' %}" />
+
+<div class="container">
+  <div class="left-col">
+    <h1 class="post-detail-title">{{ post.title }}</h1>
+    <div class="post-detail-content">{{ post.content | safe }}</div>
+
+    <div class="posted-comments">
+      <div class="card-body comment-body">
+        <h2>{{ comments.count }} comment{{ comments.count|pluralize }}</h2>
+
+        {% for comment in comments %}
+        <div class="comment">
+          <p class="comment-name">
+            {{ comment.name }}
+            <span>{{ comment.created_on }}</span>
+          </p>
+          {{ comment.body | safe | linebreaks }}
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+
+    <div class="writen-comments">
+      <div class="card-body comment-body">
+        {% if new_comment %}
+        <div class="alert alert-success" role="alert">
+          Your comment is awaiting moderation
+        </div>
+        {% else %}
+        <h3>Leave a comment</h3>
+        <form class="form"
+        method="post" style="margin-top: 1.3em">
+          {{ comment_form.media | safe }}
+          {{ comment_form|crispy }}
+          {% csrf_token %} 
+          <button type="submit" class="comment-submit">Submit</button>
+        </form>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+
+  <div class="right-col">
+    <div class="presentation_box">
+      <img
+        id="presentation_pic"
+        src="{% static 'core/images/medalion_maria.png' %}"
+        alt="Maria"
+      />
+      <h1>About me</h1>
+      <p>
+        My name is Maria and I'm here to show you how to do proper miniature
+        gardens. My name is Maria and I'm here to show you how to do proper
+        miniature gardens.
+      </p>
+      <a href="{% url 'contact' %}">READ MORE</a>
+    </div>
+    <button  onclick="topFunction()" id='back_to_top' title="Go to top">&#10148;</button>
+  </div>
+</div>
+{% endblock %}

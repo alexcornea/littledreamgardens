@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+{% load static %}
+
+<html lang="en" dir="ltr">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- CSS -->
+    <link rel="stylesheet" href="{% static 'core/css/styles.css' %}">
+    <link rel="stylesheet" href="{% static 'core/css/gallery_styles.css' %}">
+    <link rel="stylesheet" href="{% static 'core/css/category_styles.css' %}">
+    <link rel="stylesheet" href="{% static 'core/css/search_styles.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+<link href="https://fonts.googleapis.com/css2?family=Alice&family=Nothing+You+Could+Do&family=Raleway&display=swap" rel="stylesheet">
+
+      <!-- Optional JavaScript -->
+      <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous"></script>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+      <script type="text/javascript" src="{% static 'core/js/home.js' %}"></script>
+      
+      <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+         integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+         integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+         <script type="text/javascript" src="{% static 'core/js/gallery.js' %}"></script>
+    <title>Little Dream Gardens</title>
+  </head>
+  <body>
+    <div class="page-container">
+      <div class="container_lgd">
+        <!-- Top Image -->
+        <img
+          class="image"
+          src="{% static 'core/images/logo_ldg.png' %}"
+          alt="My Image"
+        />
+
+        <!-- Navbar -->
+        <header class="header-lgd sticky-top">
+          <div class="sticky-top">
+            <div class="topnav-LGD" id="myTopnav">
+              <a id="dr0" href="{% url 'home' %}">Home</a>
+              <div class="dropdown-LGD drop1">
+                <button class="dr1 dropbtn">
+                  Getting Started
+                  <i class="fa fa-caret-down"></i>
+                </button>
+                <div class="dr-c1 dropdown-content-LGD1 dropdown1">
+                  {% for category in category_list_GS %}
+                  <a href="/category/{{ category.name }}"
+                    >{{ category.name|title }}</a
+                  >
+                  {% endfor %}
+                </div>
+              </div>
+
+              <div class="dropdown-LGD drop2">
+                <button class="dr2 dropbtn">
+                  DIY
+                  <i class="fa fa-caret-down"></i>
+                </button>
+                <div class="dr-c2 dropdown-content-LGD2 dropdown2">
+                  {% for category in category_list_DIY %}
+                  <a href="/category/{{ category.name }}"
+                    >{{ category.name|title }}</a
+                  >
+                  {% endfor %}
+                </div>
+              </div>
+
+              <div class="dropdown-LGD drop3">
+                <button class="dr3 dropbtn">
+                  Gardens
+                  <i class="fa fa-caret-down"></i>
+                </button>
+                <div class="dr-c3 dropdown-content-LGD3 dropdown3">
+                  {% for category in category_list_GR %}
+                  <a href="/category/{{ category.name }}"
+                    >{{ category.name|title }}</a
+                  >
+                  {% endfor %}
+                </div>
+              </div>
+
+              <div class="dropdown-LGD drop4">
+                <button class="dr4 dropbtn">
+                  Terrariums
+                  <i class="fa fa-caret-down"></i>
+                </button>
+                <div class="dr-c4 dropdown-content-LGD4 dropdown4">
+                  {% for category in category_list_TR %}
+                  <a href="/category/{{ category.name }}"
+                    >{{ category.name|title }}</a
+                  >
+                  {% endfor %}
+                </div>
+              </div>
+
+              <a id="dr5" href="{% url 'base_gallery' %}">Gallery</a>
+              <a id="dr6" href="{% url 'contact' %}">Contact</a>
+
+              <div class="wrap">
+                <form class="search" action="/search/" method="get">
+                  <input
+                    class="searchTerm"
+                    name="q"
+                    type="text"
+                    placeholder="Search"
+                    aria-label="Search"
+                    required
+                  />
+                  <button type="submit" class="searchButton">
+                    <i class="fa fa-search"></i>
+                  </button>
+                </form>
+              </div>
+              <a
+                href="javascript:void(0);"
+                style="font-size: 15px"
+                class="icon"
+                onclick="myFunction()"
+                >&#9776;</a
+              >
+            </div>
+          </div>
+        </header>
+
+        <div class="wrap-mobile">
+          <form class="search-mobile" action="/search/" method="get">
+            <input
+              class="searchTerm-mobile"
+              name="q"
+              type="text"
+              placeholder="Search"
+              aria-label="Search"
+              required
+            />
+            <button type="submit" class="searchButton-mobile">
+              <i class="fa-m fa fa-search"></i>
+            </button>
+          </form>
+        </div>
+        <!-- Content -->
+        <div class="content-wrap">{% block content %}{% endblock %}</div>
+      </div>
+    </div>
+
+    <footer class="footer-lgd">
+      <div class="top-footer">
+        <h1>Little Dream Gardens</h1>
+        <div class="instagram">
+          <h2>Follow us on Instagram</h2>
+          <a href="https://www.instagram.com/littledreamgardens/"
+            ><img src="{% static 'core/images/instagram.png' %}" alt=""
+          /></a>
+        </div>
+      </div>
+      <div class="bottom-footer">
+        <address class="top-pic-address">
+          <a href="https://www.freepik.com/free-photos-vectors/background"
+            >Top Background vector created by rawpixel.com - www.freepik.com</a>
+        </address>
+        <p>Website created by Alex Cornea</p>
+        <p>Copyright © Little Dream Gardens. All rights reserved</p>
+      </div>
+    </footer>
+  </body>
+</html>

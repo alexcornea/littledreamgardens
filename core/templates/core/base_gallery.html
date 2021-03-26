@@ -1,0 +1,67 @@
+{% extends "core/base.html" %} {% block content %} {% load static %}
+
+  <div class="gallery-title">
+  <h1>Gallery</h1>
+</div>
+
+<div class="gallery-content">
+ 
+    <img class="image gallery-picture" id="myImg" src="{% static 'core/images/gallery/4e8ea688-f820-44c4-961f-20b5dc1af268.JPG' %}" alt="" style="width: 100%; max-width: 300px"/>
+    <img class="image gallery-picture" id="myImg" src="{% static 'core/images/gallery/5edebac6-9af0-49b9-bfbc-3023d1e03804.JPG' %}" alt="" style="width: 100%; max-width: 300px"/>
+    <img class="image gallery-picture" id="myImg" src="{% static 'core/images/gallery/532bdf66-527e-4f81-8230-0e2e09138f7b.JPG' %}" alt="" style="width: 100%; max-width: 300px"/>
+    <img class="image gallery-picture" id="myImg" src="{% static 'core/images/gallery/3264acd5-ed88-4494-af14-9639678f2524.JPG' %}" alt="" style="width: 100%; max-width: 300px"/>
+    <img class="image gallery-picture" id="myImg" src="{% static 'core/images/gallery/76303ff2-5e57-4d6f-b239-a6358a282f0b.JPG' %}" alt="" style="width: 100%; max-width: 300px"/>
+    <img class="image gallery-picture" id="myImg" src="{% static 'core/images/gallery/610509e9-617d-470f-8176-d4a2f398c6af.JPG' %}" alt="" style="width: 100%; max-width: 300px"/>
+    <img class="image gallery-picture" id="myImg" src="{% static 'core/images/gallery/a171f733-41ff-4c85-9a2f-2e39afaab695.JPG' %}" alt="" style="width: 100%; max-width: 300px"/>
+    <img class="image gallery-picture" id="myImg" src="{% static 'core/images/gallery/a4568905-4f85-4730-96fb-0281289c4659.JPG' %}" alt="" style="width: 100%; max-width: 300px"/>
+    <img class="image gallery-picture" id="myImg" src="{% static 'core/images/gallery/bec51523-5e70-463e-a194-d74b184f5838.JPG' %}" alt="" style="width: 100%; max-width: 300px"/>
+    <img class="image gallery-picture" id="myImg" src="{% static 'core/images/gallery/da115254-40bf-48a6-ba46-87b7e17029cb.JPG' %}" alt="" style="width: 100%; max-width: 300px"/>
+    <img class="image gallery-picture" id="myImg" src="{% static 'core/images/gallery/DIY.b_003_011.jpg' %}" alt="" style="width: 100%; max-width: 300px"/>
+    <img class="image gallery-picture" id="myImg" src="{% static 'core/images/gallery/DIY.c_002_017.jpg' %}" alt="" style="width: 100%; max-width: 300px"/>
+    <img class="image gallery-picture" id="myImg" src="{% static 'core/images/gallery/e3f23135-1625-4abc-8a11-5be65b3dc815.JPG' %}" alt="" style="width: 100%; max-width: 300px"/>
+    <img class="image gallery-picture" id="myImg" src="{% static 'core/images/gallery/f27cf649-a4e8-47d0-96ae-fef8deb007c0.JPG' %}" alt="" style="width: 100%; max-width: 300px"/>
+    <img class="image gallery-picture" id="myImg" src="{% static 'core/images/gallery/GS.a_006_002.jpg' %}" alt="" style="width: 100%; max-width: 300px"/>
+    <img class="image gallery-picture" id="myImg" src="{% static 'core/images/gallery/T.b_002_001.jpg' %}" alt="" style="width: 100%; max-width: 300px"/>
+
+<!-- The Modal -->
+<div id="myModal" class="modal">
+
+  <!-- The Close Button -->
+  <span class="close" onclick="document.getElementById('myModal').style.display='none'"><h1>&times;</h1></span>
+
+  <!-- Modal Content (The Image) -->
+  <img class="modal-content" id="img01">
+
+  <!-- Modal Caption (Image Text) -->
+  <div id="caption"></div>
+</div>
+</div> 
+
+<script>// Get the modal
+var modal = document.getElementById("myModal");
+
+// Get the image and insert it inside the modal - use its "alt" text as a caption
+var images = document.getElementsByClassName("image");
+var modalImg = document.getElementById("img01");
+var captionText = document.getElementById("caption");
+
+for (var i = 0; i < images.length; i++) {
+  var img = images[i];
+  img.onclick = function (evt) {
+    modal.style.display = "block";
+    modalImg.src = this.src;
+    modalImg.alt = this.alt;
+    captionText.innerHTML = this.alt;
+  };
+};
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function () {
+  modal.style.display = "none";
+};
+</script>
+
+{% endblock %}

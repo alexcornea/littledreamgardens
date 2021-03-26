@@ -1,0 +1,24 @@
+                                         List of databases
+        Name        |   Owner    | Encoding |   Collate   |    Ctype    |     Access privileges     
+--------------------+------------+----------+-------------+-------------+---------------------------
+ alexcornea         | alexcornea | UTF8     | en_GB.UTF-8 | en_GB.UTF-8 | 
+ everycheese        | alexcornea | UTF8     | en_GB.UTF-8 | en_GB.UTF-8 | 
+ gardens            | postgres   | UTF8     | en_GB.UTF-8 | en_GB.UTF-8 | =Tc/postgres             +
+                    |            |          |             |             | postgres=CTc/postgres    +
+                    |            |          |             |             | gardens=CTc/postgres
+ lexus              | postgres   | UTF8     | en_GB.UTF-8 | en_GB.UTF-8 | 
+ lgddb              | alexcornea | UTF8     | en_GB.UTF-8 | en_GB.UTF-8 | =Tc/alexcornea           +
+                    |            |          |             |             | alexcornea=CTc/alexcornea
+ littledb           | alexcornea | UTF8     | en_GB.UTF-8 | en_GB.UTF-8 | =Tc/alexcornea           +
+                    |            |          |             |             | alexcornea=CTc/alexcornea+
+                    |            |          |             |             | littledb=CTc/alexcornea
+ littledreamgardens | alexcornea | UTF8     | en_GB.UTF-8 | en_GB.UTF-8 | 
+ littlegreendreams  | alexcornea | UTF8     | en_GB.UTF-8 | en_GB.UTF-8 | 
+ postgres           | postgres   | UTF8     | en_GB.UTF-8 | en_GB.UTF-8 | 
+ template0          | postgres   | UTF8     | en_GB.UTF-8 | en_GB.UTF-8 | =c/postgres              +
+                    |            |          |             |             | postgres=CTc/postgres
+ template1          | postgres   | UTF8     | en_GB.UTF-8 | en_GB.UTF-8 | =c/postgres              +
+                    |            |          |             |             | postgres=CTc/postgres
+ test_everycheese   | alexcornea | UTF8     | en_GB.UTF-8 | en_GB.UTF-8 | 
+(12 rows)
+
