@@ -4,7 +4,11 @@
 *.pyc
 __pycache__
 db.sqlite3
-media
+
+.bash_*
+.bashrc
+.python_history
+get-pip.py
 
 # Backup files # 
 *.bak 
@@ -18,6 +22,8 @@ media
 develop-eggs/ 
 dist/ 
 downloads/ 
+aws-codecommit/
+was_m3dia/
 nginx/
 postgres-data/
 postgresql/
@@ -89,3 +95,12 @@ GitHub.sublime-settings
 !.vscode/launch.json 
 !.vscode/extensions.json 
 .history
+
+
+
+git rm --cached .bash_history
+git rm --cached .bash_profile
+git rm --cached .bashrc
+git rm --cached .python_history
+git rm --cached get-pip.py
+

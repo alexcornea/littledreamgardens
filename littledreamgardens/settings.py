@@ -35,18 +35,17 @@ DOCKER = True
 # Application definition
 
 INSTALLED_APPS = [
+    'jquery',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
-    'core.apps.CoreConfig',
     'django.contrib.staticfiles',
-    'jquery',
+    'core.apps.CoreConfig',
     'ckeditor',
     'ckeditor_uploader',
     'crispy_forms',
-    
 ]
 
 MIDDLEWARE = [
@@ -129,17 +128,15 @@ USE_L10N = True
 USE_TZ = True
 
 
-
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
-STATIC_URL = '/static/'
-MEDIA_URL = '/media/'
 
-MEDIA_ROOT = '/vol/web/media'
+STATIC_URL = '/static/static/'
+MEDIA_URL = '/static/media/'
+
 STATIC_ROOT = 'vol/web/static'
-
-
+MEDIA_ROOT = 'vol/web/media'
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
@@ -155,7 +152,6 @@ CKEDITOR_CONFIGS = {
         'extraPlugins': ','.join([ 
             'uploadimage',
             'autogrow',
-            
          ]),
     },
     'basic': {
